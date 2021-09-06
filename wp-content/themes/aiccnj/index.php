@@ -129,10 +129,10 @@ echo $content; ;?>
 		</div>
 		<div class="latestBlogSection sec" data-id="4">
 			<h2 data-aos="fade-right" data-aos-delay="100">Latest update from blog</h2>
-			 <a href="javascript:;" class="commanBtn active allStoryBtn" data-aos="fade-left" data-aos-delay="200">READ ALL STORIES</a>
-			 <a href="javascript:;" class="commanBtn active allStoryBtnMb" data-aos="fade-left" data-aos-delay="200">View ALL</a>
+			 <a href="<?php echo site_url();?>/blog" class="commanBtn active allStoryBtn" data-aos="fade-left" data-aos-delay="200">READ ALL STORIES</a>
+			 <a href="<?php echo site_url();?>/blog" class="commanBtn active allStoryBtnMb" data-aos="fade-left" data-aos-delay="200">View ALL</a>
 			    <div class="owl-carousel blog-slide">
-					<?php $qry_upcoming_event = new WP_Query( array('post_type' => 'post','post_status' => 'publish') );
+					<?php $qry_upcoming_event = new WP_Query( array('post_type' => 'post','post_status' => 'publish','posts_per_page'=>4) );
 						if ( $qry_upcoming_event->have_posts() ) {
                         $j=500;
 						$k=300;
@@ -147,7 +147,7 @@ echo $content; ;?>
 		               	 	<span><?php echo get_the_date( 'F j, Y' ); ?></span>
 		               	 	<h3><?php the_title();?></h3>
 		               	 	<p><?php the_excerpt();?></p>
-		               	 	<a href="javascript:;" class="commanBtn">READ MORE</a>
+		               	 	<a href="<?php echo get_permalink() ;?>" class="commanBtn">READ MORE</a>
 		               	 </div>
 		               </div>
 		              <?php   $j+=200 ;  $k+=200 ;  }}	wp_reset_postdata();?>

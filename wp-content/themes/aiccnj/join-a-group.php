@@ -55,5 +55,5 @@ global $wpdb;
 		</div>
 	</div>
 	
-		  <?php require get_template_directory() . '/social-share.php';?>
+<?php require get_template_directory() . '/social-share.php';?>
 <?php endwhile; get_footer(); ?>

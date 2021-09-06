@@ -57,7 +57,31 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * Normalizing styles have been helped along thanks to the fine work of
  * Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  */
-
+.my-blog-listing a {padding: 7px 14px;
+    text-align: center;
+    color: #192841;
+    font-size: 16px;
+    margin-right: 3px;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'ProximaNovaSemibold';}
+.my-blog-listing a:hover{background: #192841;
+    color: #fff;
+    border-radius: 8px;}
+	
+.my-blog-listing span {   
+ background: #192841;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    margin-right: 3px;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'ProximaNovaSemibold';
+    padding: 7px 14px;
+}
 .request-a-prayer-submit{ 
    width: 48%;
     background: #ff2f2f;
