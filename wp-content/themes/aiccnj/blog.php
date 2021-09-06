@@ -53,7 +53,7 @@ if ( $qry_upcoming_event->have_posts() ) {
 								<h4><?php echo get_the_date( 'F j, Y' ); ?></h4>
 							</div>
 							<div class="blog-list-summery">
-								<span class="blog-tag">TAG CATEGORY</span>
+						<!--		<span class="blog-tag">TAG CATEGORY</span>-->
 								<h4><?php the_title();?></h4>
 								<p><?php the_excerpt();?></p>	
 								<div class="blog-readmore">
@@ -80,7 +80,7 @@ echo paginate_links( array(
 ) ); 
 wp_reset_postdata();
 ?>
-
+ 
 
 						
 					  </div>

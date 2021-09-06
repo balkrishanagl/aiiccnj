@@ -7,7 +7,7 @@
  * @since Twenty Sixteen 1.0
  */
  
- $blog_id= the_ID();
+ $blog_id= get_the_ID();
 ?>
 <div class="blog-details-container" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="blog-details-outer">
@@ -17,7 +17,7 @@
 	<img src="<?php echo $image[0] ;?>" > 
 		</div>
 		<div class="blog-deatsils-main-content">
-			<span class="blog-tag">TAG CATEGORY</span>
+		<!--	<span class="blog-tag">TAG CATEGORY</span>-->
 			<h2><?php the_title(); ?></h2>
 			<?php the_content(); ?>
 		</div>

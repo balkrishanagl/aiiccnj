@@ -32,57 +32,33 @@ get_header(); ?>
 			<div class="related-blog-post">
 				<div class="related-blog-title">Related Articles</div>
 				<div class="blog-listing-outer">
+				<?php $qry_blog = new WP_Query( array('post_type' => 'post','post_status' => 'publish','posts_per_page'=>4) );
+						if ( $qry_blog->have_posts() ) {
+                        $j=500;
+						$k=300;
+                        while ( $qry_blog->have_posts() ) {
+								$qry_blog->the_post();
+								$postid = get_the_ID();
+							     $image = wp_get_attachment_image_src(get_post_thumbnail_id($postid), 'full'); 
+							?>
 					<div class="blog-list">
 						<div class="blog-list-th">
 							<a href="javascript:;">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/blog/blog-th7.jpg">
+								<img src="<?php echo $image[0]; ?>">
 							</a>
-							<h4>MAY 25, 2021</h4>
+							<h4><?php echo get_the_date( 'F j, Y' ); ?></h4>
 						</div>
 						<div class="blog-list-summery">
-							<span class="blog-tag">TAG CATEGORY</span>
-							<h4>Lorem ipsum dolor sit amet consectetur
-								adipiscing elit.</h4>
-							<p>Quisque non ex nibh. Morbi rutrum laoreet tempus. Sed pellentesque mi non pharetra interdum. </p>	
+							<!--<span class="blog-tag">TAG CATEGORY</span>-->
+							<h4><?php the_title();?></h4>
+							<p><?php the_excerpt();?></p>	
 							<div class="blog-readmore">
-								<a href="javascript:;">Read More</a>
+								<a href="<?php echo get_permalink() ;?>">Read More</a>
 							</div>
 						</div>
 					</div>
-					<div class="blog-list">
-						<div class="blog-list-th">
-							<a href="javascript:;">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/blog/blog-th8.jpg">
-							</a>
-							<h4>MAY 25, 2021</h4>
-						</div>
-						<div class="blog-list-summery">
-							<span class="blog-tag">TAG CATEGORY</span>
-							<h4>Lorem ipsum dolor sit amet consectetur
-								adipiscing elit.</h4>
-							<p>Quisque non ex nibh. Morbi rutrum laoreet tempus. Sed pellentesque mi non pharetra interdum. </p>	
-							<div class="blog-readmore">
-								<a href="javascript:;">Read More</a>
-							</div>
-						</div>
-					</div>
-					<div class="blog-list">
-						<div class="blog-list-th">
-							<a href="javascript:;">
-								<img src="<?php echo get_template_directory_uri(); ?>/img/blog/blog-th9.jpg">
-							</a>
-							<h4>MAY 25, 2021</h4>
-						</div>
-						<div class="blog-list-summery">
-							<span class="blog-tag">TAG CATEGORY</span>
-							<h4>Lorem ipsum dolor sit amet consectetur
-								adipiscing elit.</h4>
-							<p>Quisque non ex nibh. Morbi rutrum laoreet tempus. Sed pellentesque mi non pharetra interdum. </p>	
-							<div class="blog-readmore">
-								<a href="javascript:;">Read More</a>
-							</div>
-						</div>
-					</div>
+				
+					<?php   }}	wp_reset_postdata();?>
 				</div>
 			</div>
 		</div>
